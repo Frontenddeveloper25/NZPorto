@@ -1,0 +1,506 @@
+:root {
+  --primary : #1DCD9F;
+  --bg : #000000;
+  --second : #222222;
+  --light : #fff;
+  --dark : #1a1a1a;
+  --shade : #333;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'poppins',sans-serif;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+/* navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 7%;
+  background-color: #f2f2f2;
+  color: white;
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 1px 10px #14b88a;
+}
+
+.nav-logo img {
+  width: 60px;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar .nav-item a {
+  text-decoration: none;
+  color: rgb(22, 22, 22);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links .nav-item a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(22, 22, 22);
+  font-weight: 500;
+  transition: color 0.3s linear;
+}
+
+/* Pseudo-element untuk garis bawah */
+.nav-links .nav-item a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Jarak antara teks dan garis */
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary); /* Warna garis bawah sama dengan teks saat hover */
+  transition: 0.3s linear;
+}
+
+/* Hover dan Focus: ubah warna dan tampilkan garis bawah */
+.nav-links .nav-item a:hover,
+.nav-links .nav-item a:focus {
+  color: var(--primary);
+}
+
+.nav-links .nav-item a:hover::after,
+.nav-links .nav-item a:focus::after {
+  width: 100%;
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--second);
+}
+
+.close-btn {
+  background: none;
+  color: rgb(32, 32, 32);
+  font-size: 30px;
+  border: none;
+  align-self: flex-end;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.close-btn {
+  display: none; /* default: sembunyikan */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(28, 94, 8, 0.37); /* Efek gelap transparan */
+  z-index: 997; /* Di bawah sidebar */
+  display: none;
+  transition: opacity 0.3s ease;
+}
+/* navbar end */
+
+/* Saat aktif : aktifkan di JS*/
+.overlay.active {
+  display: block; 
+}
+
+/* Hero Section */
+.hero {
+  padding: 200px 7% 50px;
+  background-color: #f8f8f8;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 45%; /*pelajari*/
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--second);
+  margin-bottom: 10px;
+}
+
+.hero-text h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #14b88a;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+
+
+
+/* hero section */
+
+
+/* layanan */
+.layanan {
+  padding: 80px 7% 20px;
+}
+
+.layanan .layanan-content {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.layanan-text {
+  flex: 1 1 45%;
+}
+
+.layanan-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--second);
+  margin-bottom: 10px;
+}
+
+.layanan-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--second);
+  margin-top: 10px;
+}
+
+.layanan-img {
+  display: grid;
+  place-items: center; /* langsung pusatkan vertikal + horizontal */
+  height: 400px;
+}
+
+.layanan-img img {
+  max-width: 100%;
+  height: 400px;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+/* layyanan end */
+
+/* Section */
+.layanan-section {
+  padding: 20px 7%;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.layanan-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin-bottom: 24px;
+}
+
+/* Container */
+.layanan-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+  width: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #009999;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  height: 120px;
+  background: linear-gradient(135deg, #009999, #00cccc);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Selengkapnya */
+.more-button {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.more-button a {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1c1c1c;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.arrow-circle {
+  margin-left: 12px;
+  background-color: #009999;
+  color: white;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  font-size: 20px;
+  transition: ease 0.3s;
+}
+
+.arrow-circle:hover {
+  color: #0f5b47;
+  transition: 0.3s ease;
+}
+
+.about {
+  padding: 120px 7%;
+}
+
+.about h1 {
+  font-size: 48px;
+}
+
+.about h2 {
+  margin-bottom: 10px;
+}
+
+.about .about-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 1rem;
+  background-color: #0faeae;
+  border-radius: 30px;
+  box-shadow: 2px 2px 10px #000000;
+}
+
+.about-desc {
+  width: 50%;
+  align-items: center;
+  align-content: center;
+  color: var(--light);
+}
+
+.about-desc p {
+  line-height: 1.6;
+}
+
+.about-desc i {
+  color: #ff973b;
+}
+
+.about h1 span {
+  color: var(--primary);
+}
+
+.about-img {
+  overflow: auto;
+ display: flex;
+ width: 50%;
+
+}
+
+.about-img img {
+  height: auto;
+  width: 300px;
+  border-radius: 20px;
+  margin: 0 10px;
+}
+
+.kontak {
+  background-color: #f9f9f9;
+  padding: 6rem 2rem;
+  color: #ececec;
+}
+
+.kontak .kontak-container {
+  padding: 2rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: auto;
+  background-color: #009999;
+}
+
+.kontak h2 {
+  font-size: 32px;
+  text-align: center;
+}
+
+.kontak p {
+  line-height: 1.6;
+  font-weight: 400;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+
+
+input, textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-kontak  {
+  border-style: 2px solid ;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  gap: 1rem;
+  border-radius: 30px;
+}
+
+.form-btn {
+  background-color: #14b88a;
+  padding: 1rem;
+  width: 50%;
+  border-radius: 25px;
+  margin: auto;
+  cursor: pointer;
+  border-color: #009999;
+}
+
+
+/* opsional */
+#post-container {
+  padding: 1rem;
+}
+.post-card {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* opsional */
+
+/* monbile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--light);
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 70px;
+    padding-left: 20px;
+    gap: 20px;
+    transition: right 0.4s ease;
+    z-index: 998;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links .nav-item {
+    width: 100%;
+  }
+
+  .close-btn {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
+}
