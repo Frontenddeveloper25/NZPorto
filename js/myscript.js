@@ -2,6 +2,9 @@ const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 const closeBtn = document.getElementById('closeBtn');
 const overlay = document.getElementById('overlay');
+const darkTogle = document.getElementById ('darkTogle');
+const body = document.body;
+
 
 // Tampilkan sidebar dan overlay
 hamburger.addEventListener('click', () => {
@@ -20,6 +23,27 @@ overlay.addEventListener('click', () => {
   navLinks.classList.remove('active');
   overlay.classList.remove('active');
 });
+
+// Cek preferensi dari localStorage
+if (localStorage.getItem("darkMode") === "true") {
+  body.classList.add('dark');
+  darkTogle.textContent = "O";
+}
+
+darkTogle.addEventListener('click', () => {
+  body.classList.toggle('dark');
+
+  // Ubah icon dan simpan preferensi
+  if (body.classList.contains('dark')) {
+    darkTogle.textContent = "O";
+    localStorage.setItem("darkMode", "true");
+  } else {
+    darkTogle.textContent = "O";
+    localStorage.setItem("darkMode", "false");
+  }
+});
+
+
 
 
 // fetch('https://jsonplaceholder.typicode.com/users?_limit=5') // ambil 5 data
