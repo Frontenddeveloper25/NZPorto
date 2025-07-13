@@ -27,24 +27,28 @@ overlay.addEventListener('click', () => {
 // Cek preferensi dari localStorage
 if (localStorage.getItem("darkMode") === "true") {
   body.classList.add('dark');
-  darkTogle.textContent = "O";
+  darkTogle.innerHTML = '<i data-feather="moon"></i>';
+  feather.replace();
 }
 
 darkTogle.addEventListener('click', () => {
   body.classList.toggle('dark');
 
-  // Ubah icon dan simpan preferensi
   if (body.classList.contains('dark')) {
-    darkTogle.textContent = "O";
+    darkTogle.innerHTML = '<i data-feather="moon"></i>';
     localStorage.setItem("darkMode", "true");
   } else {
-    darkTogle.textContent = "O";
+    darkTogle.innerHTML = '<i data-feather="sun"></i>';
     localStorage.setItem("darkMode", "false");
   }
+
+  feather.replace(); // Panggil ulang setelah ubah icon
 });
 
 
 
+
+// fetch API
 
 // fetch('https://jsonplaceholder.typicode.com/users?_limit=5') // ambil 5 data
 //   .then(res => res.json())
