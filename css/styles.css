@@ -289,6 +289,14 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
+.card-image img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
 
 .card-body {
   padding: 20px;
@@ -298,6 +306,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
+  text-shadow: 1px 1px 5px #000000;
 }
 
 .card-body p {
@@ -762,3 +771,73 @@ body.dark .about-tools-images {
   gap: 20px;
   padding: 1rem;
 }
+
+/* html project vidio */
+
+.project-header {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.project-header h1 {
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.project-header a {
+  text-decoration: none;
+  color: #065050;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 500;
+  transition: ease 0.3s;
+}
+
+.project-header a:hover {
+  color: var(--primary);
+  transition: 0.3s ease-out;
+  background-color: #000000;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.project-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.project-detail h2 {
+  font-size: 1.6rem;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.project-detail p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-gallery video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
