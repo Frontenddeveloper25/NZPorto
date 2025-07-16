@@ -19,6 +19,7 @@ html {
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'poppins',sans-serif;
   box-sizing: border-box;
@@ -38,6 +39,13 @@ body {
   position: fixed;
   width: 100%;
   box-shadow: 0px 1px 10px #14b88a;
+  backdrop-filter: blur(0px); /* Default blur */
+  transition: backdrop-filter 0.3s ease-in-out; /* Transition untuk blur */
+}
+
+.navbar.blur {
+  backdrop-filter: blur(10px); /* Efek blur saat scroll */
+  background-color: rgba(255, 255, 255, 0.7); /* Tambahkan transparansi */
 }
 
 .nav-logo img {
@@ -132,6 +140,18 @@ body {
 /* Hero Section */
 .hero {
   padding: 200px 7% 50px;
+  background-image: url(../img/crumpled-white-paperboard.jpg);
+  height: 100vh;
+}
+
+.overlay-hero {
+  background-image: linear-gradient(to bottom , #00000022 70%,#f6f6f6 80% );
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .hero-content {
@@ -167,19 +187,29 @@ body {
   line-height: 1.6;
 }
 
+
 .cta-button {
-  display: inline-block;
-  background-color: var(--primary);
-  color: white;
-  padding: 12px 25px;
+  display: inline-flex;
+  color: rgb(38, 38, 38);
+  padding: 10px 16px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   transition: background-color 0.3s ease;
+  border: solid 1px #009999;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.cta-button i {
+  width: 20px;                /* Ukuran ikon */
+  height: 20px;
 }
 
 .cta-button:hover {
-  background-color: #14b88a;
+  background-color: #14b88a85;
 }
 
 .hero-image {
@@ -480,16 +510,17 @@ input, textarea {
 /* opsional */
 
 footer {
-background-color: #065050;
-position: fixed;
+background-color: #ffffff;
+position: relative;
 bottom: 0;
 left: 0;
 width: 100%;
-color: #e8e8e8;
+color: #2f2f2f;
 display: flex;
 align-items: center;
 z-index: 1000;
 padding: 10px 7%;
+border-top:solid 1px #000000 ;
 }
 
 .footer-container {
@@ -519,9 +550,10 @@ footer ul {
 
 }
 
+
 footer ul li a {
   text-decoration: none;
-  color: var(--light);
+  color: #2f2f2f;
 }
 
 footer ul li a:hover {
@@ -555,22 +587,22 @@ footer ul {
   text-align: center;
 }
 
-footer ul li a {
-  color: #f5f5f5;
-  text-decoration: none;
-  font-weight: 500;
-}
+
+
 
 footer .social {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   gap: 15px;
+  align-items: center;
+  margin-top: 8px;
 }
 
 footer .social a {
-  color: var(--light);
+  color: #2f2f2f;
   transition: ease 0.3s;
+  justify-content: center;
 }
 
 footer .social a:hover {
@@ -655,6 +687,71 @@ footer .social a:hover {
     align-self: flex-end;
     margin-bottom: 10px;
 }
+
+.hero {
+  flex-direction: column;       /* Stack vertikal */
+  text-align: center;
+  padding: 80px 5%;
+  margin-bottom: 3rem;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.hero-content h2 {
+  text-align: left;
+  text-shadow: #00000094 1px 1px 5px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;   /* Stack vertikal */
+  gap: 12px;                /* Jarak antar tombol */
+  align-items: center;      /* Posisi center */
+  margin-top: 20px;
+}
+
+
+.cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 80%;              /* Ambil 80% layar agar nyaman */
+  max-width: 300px;        /* Batas maksimum */
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  background: #ffffff00;
+  border: 2px solid #00bfa6;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.cta-button i {
+  width: 18px;
+  height: 18px;
+}
+
+.cta-button:hover {
+  background: #00bfa6;
+  color: #fff;
+  border-color: #00bfa6;
+}
+
+
+.hero-image img {
+  width: 250px;                 /* Perkecil gambar */
+  margin-top: 20px;
+}
 }
 
 /* media query */
@@ -693,10 +790,14 @@ footer .social a:hover {
 
 
 body.dark {
-  background-color: #272727;
-  color: #ffffff;
+  background-color: #141414; /* Mengubah background body jika dark mode aktif */
+    color: #fff;  /* Warna teks lebih terang */
 }
 
+body.dark .hero-content p {
+  color: #000000;
+  line-height: 1.6;
+}
 
 
 body.dark .nav-logo img {
@@ -709,17 +810,30 @@ body.dark .nav-logo img {
   margin: 0.7rem 0.5rem;
 }
 
-
-body.dark .navbar {
-  background-color: #1e1e1e;
+body.dark span {
+  color: var(--primary);
 }
+
+
+/* Navbar dalam mode gelap */
+body.dark .navbar {
+  backdrop-filter: blur(0px);  /* Tanpa blur pada navbar di mode gelap */
+  background-color: rgb(0, 0, 0); /* Latar belakang gelap pada navbar */
+}
+
+/* Navbar blur saat scroll di mode gelap */
+body.dark .navbar.blur {
+  backdrop-filter: blur(10px);  /* Efek blur pada navbar di mode gelap */
+  background-color: rgba(0, 0, 0, 0.7);  /* Navbar tetap gelap dengan efek blur */
+}
+
 
 body.dark .navbar a {
   color: var(--light);
 }
 
 body.dark a {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 
 body.dark p {
@@ -742,15 +856,25 @@ body.dark .kontak-container {
   margin-left: 20px;
 }
 
+body.dark .overlay-hero {
+  background-image: linear-gradient(to bottom , #141414 10%, #f8f8f811 50%, #141414 100%);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 /* Saat mode terang (default) */
 body:not(.dark) .dark-togle {
-  background-color: #eee;
   color: #222;
 }
 
+
 /* Saat mode gelap */
 body.dark .dark-togle {
-  background-color: #222;
+  background-color: #22222200;
   color: #eee;
   display: flex;
 }
@@ -772,40 +896,84 @@ body.dark .about-tools-images {
   padding: 1rem;
 }
 
+body.dark footer {
+  background-color: #111111;
+}
+
+body.dark li a {
+  color: var(--light);
+}
+
+body.dark a {
+  color: var(--light);
+}
+
+
+
+
+
+
+
 /* html project vidio */
 
-.project-header {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px 20px;
-  text-align: center;
+.main-project section {
+  height: 100vh;
 }
 
-.project-header h1 {
-  margin-bottom: 1rem;
-  font-size: 2.2rem;
-  font-weight: 700;
+
+.navbar-pro {
+  display: flex;
+  background-color: #1d1d1d00;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
 
-.project-header a {
+.nav-project {
+  color: var(--light);
+  gap:  20px;
   text-decoration: none;
-  color: #065050;
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: 500;
-  transition: ease 0.3s;
+  list-style: none;
+  justify-content: center;
+  display: flex;
+  background-color: var(--primary);
+  padding: 0.5rem 1rem ;
+  border-radius: 20px;
+  max-width: 500px;
+  box-sizing: border-box;
 }
 
-.project-header a:hover {
-  color: var(--primary);
-  transition: 0.3s ease-out;
-  background-color: #000000;
-  display: inline-block;
-  padding: 5px;
-  border-radius: 15px;
+.nav-project li a {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--light);
 }
 
-.project-detail {
+.nav-back {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  flex-wrap: wrap;
+  border-radius: 20px;
+}
+
+.nav-back a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--light);
+}
+
+
+
+
+
+
+
+.project-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -814,13 +982,17 @@ body.dark .about-tools-images {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-.project-detail h2 {
+.project-vidio {
+  padding: 120px 0;
+}
+
+.project-vidio h2 {
   font-size: 1.6rem;
   color: #111;
   margin-bottom: 15px;
 }
 
-.project-detail p {
+.project-vidio p {
   font-size: 1rem;
   color: #444;
   line-height: 1.6;
@@ -839,5 +1011,7 @@ body.dark .about-tools-images {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+
 
 

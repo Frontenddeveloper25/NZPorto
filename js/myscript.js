@@ -2,8 +2,20 @@ const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 const closeBtn = document.getElementById('closeBtn');
 const overlay = document.getElementById('overlay');
-const darkTogle = document.getElementById ('darkTogle');
+const darkTogle = document.getElementById('darkTogle');
 const body = document.body;
+const navbar = document.querySelector('.navbar'); 
+
+// Gabungkan event listener scroll menjadi satu
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('blur'); // Tambahkan blur pada navbar saat scroll
+
+    // Jangan menambahkan atau menghapus mode gelap di sini, biarkan tetap terpisah
+  } else {
+    navbar.classList.remove('blur'); // Hapus blur saat scroll kembali ke atas
+  }
+});
 
 
 // Tampilkan sidebar dan overlay
@@ -24,13 +36,14 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('active');
 });
 
-// Cek preferensi dari localStorage
+// Cek preferensi dari localStorage untuk dark mode
 if (localStorage.getItem("darkMode") === "true") {
   body.classList.add('dark');
   darkTogle.innerHTML = '<i data-feather="moon"></i>';
   feather.replace();
 }
 
+// Toggle dark mode saat darkTogle diklik
 darkTogle.addEventListener('click', () => {
   body.classList.toggle('dark');
 
@@ -44,7 +57,6 @@ darkTogle.addEventListener('click', () => {
 
   feather.replace(); // Panggil ulang setelah ubah icon
 });
-
 
 
 
