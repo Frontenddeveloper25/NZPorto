@@ -33,24 +33,33 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 7%;
-  background-color: #f2f2f2;
-  color: white;
+  background-color: #27272700;
+  color: rgb(35, 35, 35);
   z-index: 999;
   position: fixed;
   width: 100%;
-  box-shadow: 0px 1px 10px #14b88a;
   backdrop-filter: blur(0px); /* Default blur */
   transition: backdrop-filter 0.3s ease-in-out; /* Transition untuk blur */
 }
 
 .navbar.blur {
-  backdrop-filter: blur(10px); /* Efek blur saat scroll */
-  background-color: rgba(255, 255, 255, 0.7); /* Tambahkan transparansi */
+  backdrop-filter: blur(5px); /* Efek blur saat scroll */
+  background-color: rgba(255, 255, 255, 0); /* Tambahkan transparansi */
+  transition: 0.8s ease;
 }
 
-.nav-logo img {
-  width: 60px;
-  height: auto;
+.nav-logo {
+  justify-content: center;
+}
+
+.nav-logo a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--light);
+  background-color: #000000;
+  border-radius: 20px;
+  padding: 4px 6px;
+  font-size: 12px;
 }
 
 .nav-links {
@@ -102,7 +111,7 @@ body {
   display: none;
   font-size: 26px;
   cursor: pointer;
-  color: var(--second);
+  color: var(--primary);
 }
 
 .close-btn {
@@ -145,7 +154,7 @@ body {
 }
 
 .overlay-hero {
-  background-image: linear-gradient(to bottom , #00000022 70%,#f6f6f6 80% );
+  background-image: linear-gradient(to bottom , #ffffff94 70%,#f6f6f6 80% );
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -164,6 +173,10 @@ body {
 
 .hero-text {
   flex: 1 1 45%; /*pelajari*/
+  background-color: #009999;
+  padding: 1.5rem;
+  border-radius: 25px;
+  background-image: linear-gradient( to left , #ababab,#fff );
 }
 
 .hero-text h1 {
@@ -190,13 +203,13 @@ body {
 
 .cta-button {
   display: inline-flex;
-  color: rgb(38, 38, 38);
+  color: rgb(255, 255, 255);
   padding: 10px 16px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.3s ease;
-  border: solid 1px #009999;
+  background: #a0a0a0a9;
   gap: 8px;
   align-items: center;
   font-size: 16px;
@@ -209,7 +222,7 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #14b88a85;
+  background-color: #c1c1c1;
 }
 
 .hero-image {
@@ -384,51 +397,83 @@ body {
 }
 /* about */
 .about {
-  padding: 80px 7%;
-  display: flex;
+  padding: 80px 7%;  
+  border-radius: 25px; 
+  background-color: #ebebeb;
+  box-shadow: 0px 2px 5px #979797;
 }
 
 .about .about-container {
   justify-content: center;
   text-align: center;
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+
 .about h1 {
-  padding: 2rem 0;
+  padding-bottom: 0.5rem;
   font-size: 48px;
+  text-align: left;
+  font-weight: 200;
+}
+
+
+.about .about-text {
+  align-items: center;
+  text-align: center;
+  width: 50%;
+}
+
+.about-text h1 span {
+  font-family: 'My Soul', cursive;
+  font-size: 64px;
+  
 }
 
 .about .about-tools {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 50%;
+ background-image: linear-gradient( to left , #eee , rgba(73, 73, 73, 0.2));
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px #a4a4a4;
+  transition: ease 0.3s;
 }
 
+.about-tools:hover {
+  background-color: #ffffff;
+  transition: ease-in-out 0.3s;
+}
+
+
 .about .about-tools-images {
-  display: flex;
-  background-color: var(--primary);
   border-radius: 30px;
-  width: 100%;
+  max-width: 400px;
   justify-content: center;
-  gap: 20px;
-  padding: 1rem;
-  box-shadow: 2px 2px 10px #00cccc;
+  gap: 10px;
+  display: inline-block;
 }
 
 .about-tools h2 {
-  font-size: 32px;
-  padding: 1rem;
+  font-size: 24px;
+  padding-bottom: 1rem;
+  font-weight: 200;
 }
 
 .about p {
   line-height: 1.6;
   text-align: left;
+  max-width: 550px;
+  word-spacing: 7px;
 }
 
 .about-tools img {
-width: 100px;
+width: 60px;
+height: 40px;
 }
 
 .kontak {
@@ -442,7 +487,7 @@ width: 100px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   max-width: 600px;
   margin: auto;
-  background-color: #009999;
+  background-color: #222222;
 }
 
 .kontak h2 {
@@ -510,7 +555,7 @@ input, textarea {
 /* opsional */
 
 footer {
-background-color: #ffffff;
+background-color: #ffffff00;
 position: relative;
 bottom: 0;
 left: 0;
@@ -730,8 +775,7 @@ footer .social a:hover {
   font-size: 16px;
   font-weight: 500;
   color: #333;
-  background: #ffffff00;
-  border: 2px solid #00bfa6;
+  background: #a3a3a3;
   border-radius: 25px;
   transition: all 0.3s ease;
 }
@@ -800,14 +844,14 @@ body.dark .hero-content p {
 }
 
 
-body.dark .nav-logo img {
-  background-color: var(--light);
-  vertical-align: middle;
-  padding: 0.5rem;
-  border-radius: 100%;
-  height: 42px;
-  width: 42px;
-  margin: 0.7rem 0.5rem;
+body.dark .nav-logo a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--light);
+  background-color: #00000000;
+  border-radius: 20px;
+  padding: 4px 6px;
+  font-size: 12px;
 }
 
 body.dark span {
@@ -818,7 +862,7 @@ body.dark span {
 /* Navbar dalam mode gelap */
 body.dark .navbar {
   backdrop-filter: blur(0px);  /* Tanpa blur pada navbar di mode gelap */
-  background-color: rgb(0, 0, 0); /* Latar belakang gelap pada navbar */
+  background-color: rgba(0, 0, 0, 0); /* Latar belakang gelap pada navbar */
 }
 
 /* Navbar blur saat scroll di mode gelap */
@@ -851,9 +895,11 @@ body.dark .kontak-container {
 }
 
 .dark-togle {
-  font-size: 20px;
   cursor: pointer;
   margin-left: 20px;
+  padding: 1rem 0;
+  align-content: center;
+  margin-top: 4px;
 }
 
 body.dark .overlay-hero {
@@ -874,9 +920,14 @@ body:not(.dark) .dark-togle {
 
 /* Saat mode gelap */
 body.dark .dark-togle {
-  background-color: #22222200;
   color: #eee;
   display: flex;
+  cursor: pointer;
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 1rem 0;
+  align-content: center;
+  margin-top: 4px;
 }
 
 body.dark .about-tools {
