@@ -814,6 +814,10 @@ footer .social a:hover {
   .footer-container > * {
     justify-content: center !important;
   }
+
+  .hero-text p {
+    display: none;
+  }
 }
 
 

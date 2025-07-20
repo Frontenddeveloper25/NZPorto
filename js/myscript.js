@@ -5,12 +5,46 @@ const overlay = document.getElementById('overlay');
 const darkTogle = document.getElementById('darkTogle');
 const body = document.body;
 const navbar = document.querySelector('.navbar'); 
+const myCanvas = document.getElementById('myCanvas');
+
+
+myCanvas.width = window.innerWidth;
+myCanvas.height = window.innerHeight;
+
+const c = myCanvas.getContext('2d');
+
+c.fillStyle = 'blue';
+c.strokeStyle = '#000';
+c.lineWidth = 2;
+
+c.rect(420, 400, 600, 200);
+c.fill ();
+c.stroke ();
+
+
+c.fillStyle = 'red';
+c.beginPath();
+c.arc(730, 300, 120, 0, 2 * Math.PI);
+c.fill ();
+c.stroke();
+
+c.fillStyle = 'black';
+c.beginPath();
+c.moveTo (600,50);
+c.lineTo (700, 300);
+c.lineTo (500, 300);
+c.lineTo (600,50);
+c.stroke ();
+
+
+// test tag canvas
+
 
 // Gabungkan event listener scroll menjadi satu
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     navbar.classList.add('blur'); // Tambahkan blur pada navbar saat scroll
-
+    
     // Jangan menambahkan atau menghapus mode gelap di sini, biarkan tetap terpisah
   } else {
     navbar.classList.remove('blur'); // Hapus blur saat scroll kembali ke atas
@@ -46,7 +80,7 @@ if (localStorage.getItem("darkMode") === "true") {
 // Toggle dark mode saat darkTogle diklik
 darkTogle.addEventListener('click', () => {
   body.classList.toggle('dark');
-
+  
   if (body.classList.contains('dark')) {
     darkTogle.innerHTML = '<i data-feather="moon"></i>';
     localStorage.setItem("darkMode", "true");
@@ -54,7 +88,7 @@ darkTogle.addEventListener('click', () => {
     darkTogle.innerHTML = '<i data-feather="sun"></i>';
     localStorage.setItem("darkMode", "false");
   }
-
+  
   feather.replace(); // Panggil ulang setelah ubah icon
 });
 
@@ -65,10 +99,10 @@ darkTogle.addEventListener('click', () => {
 // fetch('https://jsonplaceholder.typicode.com/users?_limit=5') // ambil 5 data
 //   .then(res => res.json())
 //   .then(posts => {
-//     const container = document.getElementById('post-container');
-//     posts.forEach(post => {
-//       const card = document.createElement('div');
-//       card.className = 'post-card';
+  //     const container = document.getElementById('post-container');
+  //     posts.forEach(post => {
+    //       const card = document.createElement('div');
+    //       card.className = 'post-card';
 //       card.innerHTML = `<h3>${post.title}</h3><p>${post.body}</p>`;
 //       container.appendChild(card);
 //     });
