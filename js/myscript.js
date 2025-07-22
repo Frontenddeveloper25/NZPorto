@@ -5,37 +5,35 @@ const overlay = document.getElementById('overlay');
 const darkTogle = document.getElementById('darkTogle');
 const body = document.body;
 const navbar = document.querySelector('.navbar'); 
-const myCanvas = document.getElementById('myCanvas');
 
 
-myCanvas.width = window.innerWidth;
-myCanvas.height = window.innerHeight;
+// myCanvas.width = window.innerWidth;
+// myCanvas.height = window.innerHeight;
 
-const c = myCanvas.getContext('2d');
+// const c = myCanvas.getContext('2d');
 
-c.fillStyle = 'blue';
-c.strokeStyle = '#000';
-c.lineWidth = 2;
+// c.fillStyle = 'blue';
+// c.strokeStyle = '#000';
+// c.lineWidth = 2;
 
-c.rect(420, 400, 600, 200);
-c.fill ();
-c.stroke ();
+// c.rect(420, 400, 600, 200);
+// c.fill ();
+// c.stroke ();
 
 
-c.fillStyle = 'red';
-c.beginPath();
-c.arc(730, 300, 120, 0, 2 * Math.PI);
-c.fill ();
-c.stroke();
+// c.fillStyle = 'red';
+// c.beginPath();
+// c.arc(730, 300, 120, 0, 2 * Math.PI);
+// c.fill ();
+// c.stroke();
 
-c.fillStyle = 'black';
-c.beginPath();
-c.moveTo (600,50);
-c.lineTo (700, 300);
-c.lineTo (500, 300);
-c.lineTo (600,50);
-c.stroke ();
-
+// c.fillStyle = 'black';
+// c.beginPath();
+// c.moveTo (600,50);
+// c.lineTo (700, 300);
+// c.lineTo (500, 300);
+// c.lineTo (600,50);
+// c.stroke ();
 
 // test tag canvas
 
