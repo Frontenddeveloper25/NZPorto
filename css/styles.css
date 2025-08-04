@@ -73,39 +73,44 @@ body {
   text-decoration: none;
   color: rgb(22, 22, 22);
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .nav-links .nav-item a {
   position: relative;
   text-decoration: none;
   color: rgb(22, 22, 22);
-  font-weight: 500;
-  transition: color 0.3s linear;
+  font-weight: 200;
+  transition:  0.3s ease;
+}
+
+.nav-item a.active {
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: ease-in-out 0.3s ;
 }
 
 
-/* Pseudo-element untuk garis bawah */
+/* Pseudo-element untuk garis bawah
 .nav-links .nav-item a::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -4px; /* Jarak antara teks dan garis */
+  bottom: -4px; 
   width: 0%;
-  height: 2px;
-  background-color: var(--primary); /* Warna garis bawah sama dengan teks saat hover */
+  height: 1px;
+  background-color: var(--shade); 
   transition: 0.3s linear;
 }
-
-/* Hover dan Focus: ubah warna dan tampilkan garis bawah */
 .nav-links .nav-item a:active,
 .nav-links .nav-item a:hover {
-  color: var(--primary);
-}
+  text-shadow: 1px 1px 2px #000000;
+  transition: ease-in-out 0.3s ;
+} */
 
 .nav-links .nav-item a:hover::after,
 .nav-links .nav-item a:focus::after {
   width: 100%;
+  transition: ease-in-out 0.3s ;
 }
 
 
@@ -124,6 +129,7 @@ body {
   align-self: flex-end;
   margin-right: 20px;
   cursor: pointer;
+  
 }
 
 .close-btn {
@@ -150,7 +156,7 @@ body {
 
 /* Hero Section */
 .hero {
-  padding: 200px 7% 50px;
+  padding: 80px 7% 50px;
   background-image: url(../img/crumpled-white-paperboard.jpg);
   height: 100vh;
 }
@@ -173,12 +179,15 @@ body {
   flex-wrap: wrap;
 }
 
+.hero h1 span {
+  font-family: 'My Soul', cursive;
+  font-size: 6rem;
+  font-weight: 200;
+}
+
 .hero-text {
   flex: 1 1 45%; /*pelajari*/
-  background-color: #009999;
   padding: 1.5rem;
-  border-radius: 25px;
-  background-image: linear-gradient( to left , #ababab,#fff );
 }
 
 .hero-text h1 {
@@ -189,10 +198,14 @@ body {
 }
 
 .hero-text h2 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
-  color: var(--primary);
+  color: #000000;
   margin-bottom: 20px;
+}
+
+.hero-text h2 span {
+  color: #636363;
 }
 
 .hero-text p {
@@ -211,7 +224,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.3s ease;
-  background: #a0a0a0a9;
+  background: #4e4e4ea9;
   gap: 8px;
   align-items: center;
   font-size: 16px;
@@ -224,18 +237,24 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #c1c1c1;
+  background-color: #e8e8e8;
+  color: #343434;
+  box-shadow: 2px 2px 10px #b5b5b5;
 }
 
 .hero-image {
   flex: 1 1 45%;
-  text-align: center;
+  text-align: right;
+  padding: 1rem;
 }
 
 .hero-image img {
-  max-width: 100%;
-  height: auto;
+  max-width: 80%;
   border-radius: 20px;
+  object-fit: contain;
+  height: 600px;
+
+
 }
 
 
@@ -245,17 +264,21 @@ body {
 
 
 /* layanan */
-.layanan {
-  padding: 80px 7% 20px;
+/* Section */
+.layanan-section {
+  padding: 80px 7% ;
 }
 
-.layanan .layanan-content {
-  margin-top: 80px;
+.layanan-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
   flex-wrap: wrap;
+  gap: 40px;
+  background-color: #f9f9f9;
+  width: 80%;
+  border-radius: 25px;
+  box-shadow: 5px 10px  15px 2px #d6d6d6;
+  padding: 1rem;
 }
 
 .layanan-text {
@@ -267,6 +290,7 @@ body {
   font-weight: 700;
   color: var(--second);
   margin-bottom: 10px;
+  
 }
 
 .layanan-text p {
@@ -289,29 +313,26 @@ body {
   object-fit: contain;
   border-radius: 20px;
 }
-/* layyanan end */
-
-/* Section */
-.layanan-section {
-  padding: 20px 7%;
-  font-family: 'Poppins', sans-serif;
-}
 
 
 .layanan-section h2 {
-  font-size: 32px;
+  font-size: 64px;
   font-weight: 700;
   color: #1c1c1c;
   margin-bottom: 24px;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 200;
+  font-family: 'my soul';
 }
 
-/* Container */
-.layanan-container {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+.layanan-section h2 span {
+  font-family: 'poppins';
+  font-size: 32px;
+  font-style: italic;
 }
+
+
 
 /* Card */
 .card {
@@ -399,7 +420,7 @@ body {
 }
 /* about */
 .about {
-  padding: 120px 7%;  
+  padding: 60px 7%;  
   border-radius: 25px; 
 }
 
@@ -414,12 +435,13 @@ body {
   gap: 10px;
   padding: 1.5rem;
   border-radius: 20px;
+  margin-top: 2rem;
+  
 }
 
 
 .about h1 {
-  padding-bottom: 0.5rem;
-  font-size: 48px;
+  font-size: 2rem;
   text-align: left;
   font-weight: 200;
 }
@@ -429,11 +451,17 @@ body {
   align-items: center;
   text-align: center;
   width: 50%;
+  word-spacing: 2px;
+}
+
+.about .about-text span {
+  font-style: italic;
+  font-weight: 400;
 }
 
 .about-text h1 span {
   font-family: 'My Soul', cursive;
-  font-size: 64px;
+  font-size: 6rem;
   
 }
 
@@ -471,8 +499,9 @@ body {
 .about p {
   line-height: 1.6;
   text-align: left;
-  max-width: 550px;
-  word-spacing: 7px;
+  max-width: 600px;
+  font-size: 1rem;
+  font-weight: 200;
 }
 
 .about-tools img {
@@ -567,7 +596,6 @@ width: 100%;
 color: #2f2f2f;
 display: flex;
 align-items: center;
-z-index: 1000;
 padding: 10px 7%;
 border-top:solid 1px #000000 ;
 }
@@ -659,38 +687,31 @@ footer .social a:hover {
   transition: ease 0.3s;
 }
 
-.dark-togle-container {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
 
-.tool-tip {
-  background-color: #333;
-  color: var(--light);
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 8px;
-  position: absolute;
-  z-index: 1;
-  bottom: 40%;
-  left: -50%;
-  transform: translateX(-50%);
+/* loader */
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  top: 0; left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
   opacity: 0;
-  transition: opacity  0.3s;
-  white-space: nowrap;
-  visibility: hidden;
-  transition: ease 0.3s;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
-.tool-tip p {
-  font-size: 12px;
-}
-
-.dark-togle-container:hover .tool-tip {
-  visibility: visible;
+.loader.show {
   opacity: 1;
+  pointer-events: all;
 }
+
+
+/* media query */
+
 
 /* monbile */
 @media (max-width: 768px) {
@@ -727,6 +748,7 @@ footer .social a:hover {
     right: 0;
   }
 
+
   .nav-links .nav-item {
     width: 100%;
   }
@@ -742,6 +764,10 @@ footer .social a:hover {
   text-align: center;
   padding: 80px 5%;
   margin-bottom: 3rem;
+}
+
+.about {
+  padding: 20px 7%;
 }
 
 .hero-content h1 {
@@ -862,6 +888,10 @@ body.dark .nav-logo a {
   font-size: 12px;
 }
 
+body.dark .nav-links {
+  color: var(--light);
+}
+
 body.dark span {
   color: var(--primary);
 }
@@ -885,7 +915,7 @@ body.dark .navbar a {
 }
 
 body.dark a {
-  color: #1b1b1b;
+  color: #d7d7d7;
 }
 
 body.dark p {

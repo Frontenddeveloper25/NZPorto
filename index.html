@@ -1,180 +1,231 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rehan || Editor & Frontend Programmer</title>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=My+Soul&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rehan || Editor & Frontend Programmer</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=My+Soul&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
 
-<body>
-  <!-- navbar -->
-   <header>
-  <nav class="navbar">
-    <div class="nav-logo">
-      <a href="#">NZProject</a>
-    </div>
+  <body>
+    <!-- navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="nav-logo">
+          <a href="#">NZProject</a>
+        </div>
 
-    <ul class="nav-links" id="navLinks">
-      <li><button id="closeBtn" class="close-btn">&times;</button></li>
-      <li class="nav-item"><a href="#home">Home</a></li>
-      <li class="nav-item"><a href="#about">About</a></li>
-      <li class="nav-item"><a href="#service">Skill</a></li>
-      <li class="nav-item"><a href="#kontak">Kontak</a></li>
-    </ul>
+        <ul class="nav-links" id="navLinks">
+          <div id="closeBtn" class="close-btn">✖</div>
+          <li class="nav-item"><a href="#home">home</a></li>
+          <li class="nav-item"><a href="#about">about</a></li>
+          <li class="nav-item"><a href="#service">Skill</a></li>
+          <li class="nav-item"><a href="#kontak">Kontak</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <div class="dark-togle-container">
+          <div class="dark-togle" id="darkTogle" title="togle dark mode">
+            <i data-feather="sun"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div id="overlay" class="overlay"></div>
+    <!--muncul saat sidebar aktif -->
 
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <div class="dark-togle-container">
+    <!-- Hero Section -->
+    <main>
+      <section class="hero" id="home">
+        <div class="overlay-hero"></div>
+        <div class="hero-content">
+          <div class="hero-text" data-aos="fade-right" data-aos-duration="600">
+            <h1><span>H</span>alo, Saya Rehan</h1>
+            <h2><span>Editor</span> & Frontend Programmer</h2>
+            <p>
+              Halo kawan kawan <span>&#x1F525</span>. Nama saya Rehan, saya seorang editor dan design grafis.
+            </p>
+            <a href="project_vidio.html" class="cta-button"
+              ><i data-feather="briefcase"></i>proyek saya</a
+            >
+            <a href="#kontak" class="cta-button"
+              ><i data-feather="file"></i>CV Saya</a
+            >
+          </div>
+          <div class="hero-image" data-aos="fade-left" data-aos-duration="600">
+            <img src="img/profile_portonz.jpeg" alt="My profile" />
+          </div>
+        </div>
+      </section>
 
-      <div class="dark-togle" id="darkTogle" title="togle dark mode"><i data-feather="sun"></i></div>
-    </div>
-  </nav>
-</header>
-   <div id="overlay" class="overlay"></div>  <!--muncul saat sidebar aktif -->
+      <!-- About -->
+      <section class="about" id="about">
+        <div class="about-container" data-aos="fade-up" data-aos-duration="300">
+          <div class="about-text">
+            <h1><span>T</span>entang saya</h1>
+            <p>
+              Saya seorang kreator konten visual yang fokus pada desain dan video storytelling. Saat ini, saya juga mendalami <span>Front-End Development</span> dengan tujuan menjadi developer yang mampu menggabungkan estetika dan fungsi. Dengan latar belakang kreatif dan semangat belajar, saya siap berkontribusi di dunia digital, khususnya di bidang teknologi dan produk interaktif
+            </p>
+          </div>
 
-  <!-- Hero Section -->
-   <main>
-  <section class="hero" id="home">
-    <div class="overlay-hero"></div>
-    <div class="hero-content">
-      <div class="hero-text" data-aos="fade-right" data-aos-duration="600">
-        <h1>Halo, Saya Rehan</h1>
-        <h2>Editor & Frontend Programmer</h2>
-        <p>Halo, saya rehan. Saya sedang belajar menjadi front end developer. disamping itu keseharian saya adalah design dan editing vidio. saya ingin menjadi profesional front end developer dan ingin bekerja sama dengan perusahaan untuk membangun website yang dinamis responsive serta elegant modern</p>
-        <a href="project_vidio.html" class="cta-button"><i data-feather="briefcase"></i>proyek saya</a>
-        <a href="#kontak" class="cta-button"><i data-feather="file"></i>CV Saya</a>
-      </div>
-      <div class="hero-image" data-aos="fade-left" data-aos-duration="600">
-        <img src="img/company-con.jpg" alt="Foto Rehan" />
-      </div>
-    </div>
-  </section>
-  
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="about-container" data-aos="fade-up" data-aos-duration="300">
-<div class="about-text">
-  <h1><span>T</span>entang saya</h1>
-  <p>saya hobi vidiography dan edit vidio, saya menyukai style editing strory telling dengan gaya cinematic dan di samping itu saya bercita cita menjadi programmer. keseharian saya meperdalam ilmu sistem informasi secara otodidak</p>
-</div>
+          <div class="about-tools">
+            <h2>Tools yang saya kuasai</h2>
+            <div class="about-tools-images">
+              <img src="img/capcut-svgrepo-com (1).svg" alt="CapCut" />
+              <img src="img/figma-logo-svgrepo-com.svg" alt="Figma" />
+              <img src="img/vscode-16-svgrepo-com.svg" alt="VSCode" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      
-      <div class="about-tools">
-        <h2>Tools yang saya kuasai</h2>
-        <div class="about-tools-images">
-          <img src="img/capcut-svgrepo-com (1).svg" alt="CapCut">
-          <img src="img/figma-logo-svgrepo-com.svg" alt="Figma">
-          <img src="img/vscode-16-svgrepo-com.svg" alt="VSCode">
+      <!-- Project Section -->
+      <section class="layanan-section" id="service">
+        <h2>P<span>roject Saya</span></h2>
+        <div class="layanan-container">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/demopartner.jpg" alt="editing vidio" />
+            </div>
+            <div class="card-body">
+              <h3>Video Editing</h3>
+              <p>
+                Membuat konten cinematic, konten produk, reels, dan vlog dengan
+                CapCut dan DaVinci Resolve.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="img/Screenshot 2025-06-18 at 10.39.58.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h3>Web Development</h3>
+              <p>
+                Membangun website responsive seperti landing page, portofolio,
+                dan company profile.
+              </p>
+            </div>
+          </div>
+          <div class="more-button">
+            <a href="project_vidio.html" id="load-project">
+              <span>Lihat Selengkapnya</span>
+              <div class="arrow-circle">➜</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontak -->
+      <section class="kontak" id="kontak">
+        <div class="kontak-container">
+          <h2>Hubungi Saya</h2>
+          <p>
+            Saya siap bekerja sama dalam proyek kreatif maupun
+            pengembangan web. Tulis pesanmu di sini.
+          </p>
+
+          <form
+            action="https://formsubmit.co/nezaraekhan@gmail.com"
+            method="post"
+            class="form-kontak"
+          >
+            <label for="nama">Nama</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Nama kamu"
+              required
+            />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email kamu"
+              required
+            />
+
+            <label for="pesan">Pesan</label>
+            <textarea
+              id="pesan"
+              name="pesan"
+              rows="5"
+              placeholder="Tulis pesan kamu..."
+              required
+            ></textarea>
+
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://yourdomain.netlify.app/terkirim.html"
+            />
+
+            <button type="submit" class="form-btn">Kirim Pesan</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p>&copy; Neza Raekhan Maulana. All Rights reserved.</p>
+
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+
+        <div class="social">
+          <a
+            href="https://instagram.com/n2.rae"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <!-- Instagram Icon -->
+            <i data-feather="instagram"></i>
+          </a>
+
+          <a
+            href="https://wa.me/6281211951140"
+            target="_blank"
+            aria-label="WhatsApp"
+          >
+            <!-- WhatsApp Icon -->
+            <i data-feather="message-square"></i>
+          </a>
         </div>
       </div>
-      
+    </footer>
+
+    <script>
+      feather.replace();
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="js/myscript.js"></script>
+
+    <!-- loader -->
+    <div class="loader" id="page-loader">
+      <div class="spinner"></div>
     </div>
-  </section>
-
-  <!-- Skill Section -->
-  <section class="layanan" id="service">
-    <div class="layanan-content">
-      <div class="layanan-text">
-        <h1>Keahlian Saya</h1>
-        <p>Saya ahli dalam video editing dan pengembangan antarmuka website dengan HTML, CSS, dan JavaScript. Saya fokus membuat tampilan visual yang engaging dan profesional.</p>
-      </div>
-      <div class="layanan-img">
-        <img src="img/layanan1.jpeg" alt="Skill Showcase" />
-      </div>
-    </div>
-  </section>
-  
-  <!-- Project Section -->
-  <section class="layanan-section">
-    <h2>Project Saya</h2>
-    <div class="layanan-container">
-      <div class="card">
-        <div class="card-image"><img src="img/demopartner.jpg" alt="editing vidio"></div>
-        <div class="card-body">
-          <h3>Video Editing</h3>
-          <p>Membuat konten cinematic, konten produk, reels, dan vlog dengan CapCut dan DaVinci Resolve.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image"><img src="img/Screenshot 2025-06-18 at 10.39.58.png" alt=""></div>
-        <div class="card-body">
-          <h3>Web Development</h3>
-          <p>Membangun website responsive seperti landing page, portofolio, dan company profile.</p>
-        </div>
-      </div>
-      <div class="more-button">
-        <a href="project_vidio.html">
-          <span>Lihat Selengkapnya</span>
-          <div class="arrow-circle">➜</div>
-        </a>
-      </div>
-    </div>
-  </section>
-  
-
-  <!-- Kontak -->
-  <section class="kontak" id="kontak">
-    <div class="kontak-container">
-      <h2>Hubungi Saya</h2>
-      <p>Saya siap diajak bekerja sama dalam proyek kreatif maupun pengembangan web. Tulis pesanmu di sini.</p>
-
-      <form action="https://formsubmit.co/nezaraekhan@gmail.com" method="post" class="form-kontak">
-        <label for="nama">Nama</label>
-        <input type="text" id="nama" name="nama" placeholder="Nama kamu" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Email kamu" required>
-
-        <label for="pesan">Pesan</label>
-        <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan kamu..." required></textarea>
-
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://yourdomain.netlify.app/terkirim.html">
-
-        <button type="submit" class="form-btn">Kirim Pesan</button>
-      </form>
-    </div>
-  </section>
-</main>
-<footer>
-  <div class="footer-container">
-    <p> &copy; Neza Raekhan Maulana. All Rights reserved.</p>
-   
-    <ul>
-     <li><a href="#home">Beranda</a></li>
-     <li><a href="#kontak">Kontak</a></li>
-    </ul>
-   
-    <div class="social">
-      <a href="https://instagram.com/n2.rae" target="_blank" aria-label="Instagram">
-        <!-- Instagram Icon -->
-        <i data-feather="instagram"></i>
-      </a>
-      
-      <a href="https://wa.me/6281211951140" target="_blank" aria-label="WhatsApp">
-        <!-- WhatsApp Icon -->
-        <i data-feather="message-square"></i>
-      </a>
-    </div>
-    
-  </div>
-   </footer>
-
-  <script>feather.replace();</script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-  <script src="js/myscript.js"></script>
-  
-</body>
+    <!-- loader -->
+  </body>
 </html>
-
-
-

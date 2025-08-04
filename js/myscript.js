@@ -5,37 +5,33 @@ const overlay = document.getElementById('overlay');
 const darkTogle = document.getElementById('darkTogle');
 const body = document.body;
 const navbar = document.querySelector('.navbar'); 
+const section = document.querySelectorAll('section'); //pelajari ya!!//
+const navLight = document.querySelectorAll('.nav-item a'); //pelajari ya!!//
+
+window.addEventListener('scroll', () => {
+let current = "";
+
+section.forEach(section => {
+  
+  const sectionTop = section.offsetTop;
+  const sectionHeight = section.offsetHeight;
+  if (pageYOffset >= sectionTop - sectionHeight / 3 )
+  {
+    current = section.getAttribute('id');
+  }
+});
+
+  navLight.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+    }
+
+  });
+});
 
 
-// myCanvas.width = window.innerWidth;
-// myCanvas.height = window.innerHeight;
 
-// const c = myCanvas.getContext('2d');
-
-// c.fillStyle = 'blue';
-// c.strokeStyle = '#000';
-// c.lineWidth = 2;
-
-// c.rect(420, 400, 600, 200);
-// c.fill ();
-// c.stroke ();
-
-
-// c.fillStyle = 'red';
-// c.beginPath();
-// c.arc(730, 300, 120, 0, 2 * Math.PI);
-// c.fill ();
-// c.stroke();
-
-// c.fillStyle = 'black';
-// c.beginPath();
-// c.moveTo (600,50);
-// c.lineTo (700, 300);
-// c.lineTo (500, 300);
-// c.lineTo (600,50);
-// c.stroke ();
-
-// test tag canvas
 
 
 // Gabungkan event listener scroll menjadi satu
