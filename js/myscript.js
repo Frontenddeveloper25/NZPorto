@@ -87,51 +87,42 @@ darkTogle.addEventListener('click', () => {
 });
 
 
-
-// fetch API
-
-// fetch('https://jsonplaceholder.typicode.com/users?_limit=5') // ambil 5 data
-//   .then(res => res.json())
-//   .then(posts => {
-  //     const container = document.getElementById('post-container');
-  //     posts.forEach(post => {
-    //       const card = document.createElement('div');
-    //       card.className = 'post-card';
-//       card.innerHTML = `<h3>${post.title}</h3><p>${post.body}</p>`;
-//       container.appendChild(card);
-//     });
-//   });
-
-//   document.querySelector('.form-kontak').addEventListener('submit', function(e) {
-//     e.preventDefault();
+async function fetchImageFromCollection(collectionId) {
   
-//     const nama = document.getElementById('nama').value;
-//     const email = document.getElementById('Email').value;
-//     const pesan = document.getElementById('pesan').value;
+  const response = await fetch(`https://api.unsplash.com/collections/${collectionId}/photos?client_id=ByTJuriulj6bbszasVaBSfhF--CCmMETdVi-2fcPjHw`);
+  const images = await response.json();
 
-//     if (!nama || !email || !pesan) {
-//       alert('Harap isi data');
-//       return; // hentikan pengiriman
-//     }
+  console.log(images);
+
   
-//     fetch('https://jsonplaceholder.typicode.com/posts', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({
-//         nama: nama,
-//         email: email,
-//         pesan: pesan
-//       })
-//     })
-//     .then(res => res.json())
-//     .then(data => {
-//       console.log('Data terkirim ke JSONPlaceholder:', data);
-//       alert('Pesan berhasil dikirim (dummy)!');
-//     })
-//     .catch(err => {
-//       console.error('Gagal:', err);
-//     });
-//   });
+  // menambahkan gambar ke dalam carousel
+  const carousel = document.querySelector('.hero-image-slide');
+  carousel.innerHTML = '';
+
+  images.forEach( image => {
+    const imgElement = document.createElement('img');
+    imgElement.src = image.urls.regular;
+    imgElement.alt = image.alt_description;
+    imgElement.classList.add('hero-image');
+    carousel.appendChild(imgElement);
+  });
+  }
+
+// fungsi memanggil gambar
+fetchImageFromCollection('WtAwB7aG-IM');
+
+// integrasi fungsi manual carousel 
+
+let index = 0 
+
+function moveSlide(direction) {
+  const slides = document.querySelectorAll('.hero-image-slide img');
+  index = ( index + direction + slides.length) % slides.length;
+  const newTransformValue = -index * 100;
+  document.querySelector('.hero-image-slide').style.transform = `translateX(${newTransformValue}%)`;
   
+}
+
+setInterval(() => {
+  fetchImageFromCollection('YWtAwB7aG-IM'); // Gantilah dengan ID koleksi Anda
+}, 300000);  // Setiap 5 menit (300000 ms)

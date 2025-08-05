@@ -182,42 +182,48 @@ body p {
 /* Hero Section */
 .hero {
   display: flex;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
   justify-content: center;
   align-items: center;
   position: relative;
   background: #000;
+  box-shadow: 0px 2px 20px #003b99;
 }
 
 .hero-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 .hero-text {
   color: var(--light);
-  max-width: 80%;
+  max-width: 600px;
   padding: 20px;
   position: absolute;
   z-index: 2;
-  top: 50%;
+  top: 53%;
   left: 7%;
   transform: translateY(-50%);
   text-align: left;
+  background-color: #ffffff64;
+  border-radius: 25px;
 }
 
 
-
-.hero-text h1 , .hero-text h2 {
-  font-size: 2.5rem;
-  
+.hero-text h1 {
+  font-size: 3rem;
 }
 
-
-
+.hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'roboto',sans-serif;
+}
 
 
 .hero-text p {
@@ -230,6 +236,8 @@ body p {
   height: 100%;
   overflow: hidden;
   position: relative;
+  width: 100%;
+  background-color: #000;
 }
 
 .hero-image-slide {
@@ -238,17 +246,23 @@ body p {
 }
 
 .hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: 920px;
   transition: transform 1s ease-in-out;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+ 
+}
+
+.hero-image-slide:hover {
+  animation-play-state: paused;  /* Menghentikan animasi saat hover */
 }
 
 
 
+
+
 .cta-button {
-  background-color: #f09e0e;
+  background-color: #003b99;
   color: var(--light);
   padding: 12px 30px;
   border-radius: 15px;
@@ -870,6 +884,38 @@ footer .social a:hover {
 }
 
 /* media query */
+@media screen and (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: translateY(0);
+    text-align: center;
+    padding: 10px;
+  }
+
+  .hero-image-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .hero-text h1, .hero-text h2 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+}
+
+
+
 @media (max-width: 600px) {
 
   .dark-togle {
@@ -886,8 +932,20 @@ footer .social a:hover {
     justify-content: center !important;
   }
 
-  .hero-text p {
-    display: none;
+  
+}
+
+@media screen and (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 14px;
   }
 }
 
@@ -1154,5 +1212,11 @@ body.dark a {
   }
   33% {
     transform: translateX(-100%);
+  }
+  66% {
+    transform: translateX(-200);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
