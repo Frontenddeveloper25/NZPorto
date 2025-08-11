@@ -1,3 +1,5 @@
+// document object model////////////////////////////////////
+
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 const closeBtn = document.getElementById('closeBtn');
@@ -7,6 +9,16 @@ const body = document.body;
 const navbar = document.querySelector('.navbar'); 
 const section = document.querySelectorAll('section'); //pelajari ya!!//
 const navLight = document.querySelectorAll('.nav-item a'); //pelajari ya!!//
+const slider = document.querySelector('#slider');//pelajari//
+const awal = document.querySelector('.awal');
+const akhir = document.querySelector('.akhir');
+
+
+awal.innerHTML = slider.min;
+akhir.innerHTML = slider.value;
+slider.addEventListener('input', function(){
+  akhir.innerHTML = slider.value;
+});
 
 window.addEventListener('scroll', () => {
 let current = "";
@@ -87,42 +99,42 @@ darkTogle.addEventListener('click', () => {
 });
 
 
-async function fetchImageFromCollection(collectionId) {
+// async function fetchImageFromCollection(collectionId) {
   
-  const response = await fetch(`https://api.unsplash.com/collections/${collectionId}/photos?client_id=ByTJuriulj6bbszasVaBSfhF--CCmMETdVi-2fcPjHw`);
-  const images = await response.json();
+//   const response = await fetch(`https://api.unsplash.com/collections/${collectionId}/photos?client_id=ByTJuriulj6bbszasVaBSfhF--CCmMETdVi-2fcPjHw`);
+//   const images = await response.json();
 
-  console.log(images);
+//   console.log(images);
 
   
-  // menambahkan gambar ke dalam carousel
-  const carousel = document.querySelector('.hero-image-slide');
-  carousel.innerHTML = '';
+//   // menambahkan gambar ke dalam carousel
+//   const carousel = document.querySelector('.hero-image-slide');
+//   carousel.innerHTML = '';
 
-  images.forEach( image => {
-    const imgElement = document.createElement('img');
-    imgElement.src = image.urls.regular;
-    imgElement.alt = image.alt_description;
-    imgElement.classList.add('hero-image');
-    carousel.appendChild(imgElement);
-  });
-  }
+//   images.forEach( image => {
+//     const imgElement = document.createElement('img');
+//     imgElement.src = image.urls.regular;
+//     imgElement.alt = image.alt_description;
+//     imgElement.classList.add('hero-image');
+//     carousel.appendChild(imgElement);
+//   });
+//   }
 
-// fungsi memanggil gambar
-fetchImageFromCollection('WtAwB7aG-IM');
+// // fungsi memanggil gambar
+// fetchImageFromCollection('WtAwB7aG-IM');
 
-// integrasi fungsi manual carousel 
+// // integrasi fungsi manual carousel 
 
-let index = 0 
+// let index = 0 
 
-function moveSlide(direction) {
-  const slides = document.querySelectorAll('.hero-image-slide img');
-  index = ( index + direction + slides.length) % slides.length;
-  const newTransformValue = -index * 100;
-  document.querySelector('.hero-image-slide').style.transform = `translateX(${newTransformValue}%)`;
+// function moveSlide(direction) {
+//   const slides = document.querySelectorAll('.hero-image-slide img');
+//   index = ( index + direction + slides.length) % slides.length;
+//   const newTransformValue = -index * 100;
+//   document.querySelector('.hero-image-slide').style.transform = `translateX(${newTransformValue}%)`;
   
-}
+// }
 
-setInterval(() => {
-  fetchImageFromCollection('YWtAwB7aG-IM'); // Gantilah dengan ID koleksi Anda
-}, 300000);  // Setiap 5 menit (300000 ms)
+// setInterval(() => {
+//   fetchImageFromCollection('YWtAwB7aG-IM'); // Gantilah dengan ID koleksi Anda
+// }, 300000);  // Setiap 5 menit (300000 ms)
