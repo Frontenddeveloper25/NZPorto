@@ -14,50 +14,6 @@ const awal = document.querySelector('.awal');
 const akhir = document.querySelector('.akhir');
 
 
-awal.innerHTML = slider.min;
-akhir.innerHTML = slider.value;
-slider.addEventListener('input', function(){
-  akhir.innerHTML = slider.value;
-});
-
-window.addEventListener('scroll', () => {
-let current = "";
-
-section.forEach(section => {
-  
-  const sectionTop = section.offsetTop;
-  const sectionHeight = section.offsetHeight;
-  if (pageYOffset >= sectionTop - sectionHeight / 3 )
-  {
-    current = section.getAttribute('id');
-  }
-});
-
-  navLight.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-    }
-
-  });
-});
-
-
-
-
-
-// Gabungkan event listener scroll menjadi satu
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('blur'); // Tambahkan blur pada navbar saat scroll
-    
-    // Jangan menambahkan atau menghapus mode gelap di sini, biarkan tetap terpisah
-  } else {
-    navbar.classList.remove('blur'); // Hapus blur saat scroll kembali ke atas
-  }
-});
-
-
 // Tampilkan sidebar dan overlay
 hamburger.addEventListener('click', () => {
   navLinks.classList.add('active');
@@ -97,6 +53,56 @@ darkTogle.addEventListener('click', () => {
   
   feather.replace(); // Panggil ulang setelah ubah icon
 });
+
+// Gabungkan event listener scroll menjadi satu
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('blur'); // Tambahkan blur pada navbar saat scroll
+    
+    // Jangan menambahkan atau menghapus mode gelap di sini, biarkan tetap terpisah
+  } else {
+    navbar.classList.remove('blur'); // Hapus blur saat scroll kembali ke atas
+  }
+});
+
+
+
+
+
+
+window.addEventListener('scroll', () => {
+  let current = "";
+  
+  section.forEach(section => {
+    
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    if (pageYOffset >= sectionTop - sectionHeight / 3 )
+      {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    navLight.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+      
+    });
+  });
+  
+  
+  awal.innerHTML = slider.min;
+  akhir.innerHTML = slider.value;
+  slider.addEventListener('input', function(){
+    akhir.innerHTML = slider.value;
+  });
+
+
+
+
+
 
 
 // async function fetchImageFromCollection(collectionId) {

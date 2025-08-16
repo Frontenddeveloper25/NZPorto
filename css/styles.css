@@ -24,7 +24,7 @@ html {
 body {
   font-family: 'poppins',sans-serif;
   box-sizing: border-box;
-  background-color: #f8f8f8;
+  background-color: #e3e3e3;
 }
 
 body p {
@@ -33,33 +33,47 @@ body p {
 
 /* navbar */
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.2rem 7% ;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   color: rgb(35, 35, 35);
   z-index: 999;
   position: fixed;
-  width: 100%;
+  width: 86%;
   backdrop-filter: blur(0px); /* Default blur */
   transition: backdrop-filter 0.3s ease-in-out; /* Transition untuk blur */
   align-items: center;
   top: 0;
   box-shadow: 2px 2px 20px var(--card);
-  border: 1px solid #f4f4f4;
+  border: 1px solid #292929;
+  border-radius: 25px;
+  margin-top: 8px;
 
 }
 
 .navbar.blur {
   backdrop-filter: blur(5px); /* Efek blur saat scroll */
-  background-color: rgba(255, 255, 255, 0.196); /* Tambahkan transparansi */
+  background-color: rgba(219, 219, 219, 0.196); /* Tambahkan transparansi */
   transition: 0.8s ease;
 }
 
 .nav-logo {
   justify-content: center;
+  height: 28px;
+  width: 28px;
+}
+
+.nav-logo img {
+  width: 100%;
+  height: auto;
 }
 
 .nav-logo a {
@@ -282,7 +296,7 @@ body p {
 /* layanan */
 /* Section */
 .layanan-section {
-  padding: 80px 7% ;
+  padding: 60px 7% ;
 }
 
 .layanan-container {
@@ -933,15 +947,15 @@ body.dark .hero-content p {
   line-height: 1.6;
 }
 
+body.dark .nav-logo {
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+}
 
-body.dark .nav-logo a {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--light);
-  background-color: #00000000;
-  border-radius: 20px;
-  padding: 4px 6px;
-  font-size: 12px;
+body.dark .nav-logo img {
+  width: 100%;
+  height: auto;
 }
 
 body.dark .nav-links {
@@ -956,7 +970,8 @@ body.dark span {
 /* Navbar dalam mode gelap */
 body.dark .navbar {
   backdrop-filter: blur(0px);  /* Tanpa blur pada navbar di mode gelap */
-  background-color: rgba(0, 0, 0, 0); /* Latar belakang gelap pada navbar */
+  background-color: rgb(0, 0, 0); /* Latar belakang gelap pada navbar */
+  border-radius: 25px;
 }
 
 /* Navbar blur saat scroll di mode gelap */
